@@ -392,7 +392,7 @@ def discover_and_replenish_pool(target_new=15):
 
     return new_discoveries
 
-def get_prospects_for_today(count=10):
+def get_prospects_for_today(count=5):
     pool = load_pool()
     queued = [p for p in pool if p.get("status") == "queued"]
 
@@ -416,7 +416,7 @@ def get_prospects_for_today(count=10):
     save_pool(pool)
     return selected
 
-def format_report_text(top_10, activity=None, pool=None):
+def format_report_text(prospects_list, activity=None, pool=None):
     if activity is None:
         activity = load_daily_activity()
     if pool is None:
@@ -425,7 +425,7 @@ def format_report_text(top_10, activity=None, pool=None):
     today_str = datetime.date.today().strftime("%d %B %Y")
 
     # Intelligently find previous reported businesses for Follow-ups
-    reported_previously = [p for p in pool if p.get("status") == "reported" and p not in top_10]
+    reported_previously = [p for p in pool if p.get("status") == "reported" and p not in prospects_list]
     followup_candidates = reported_previously[-3:] if len(reported_previously) >= 3 else reported_previously
 
     lines = []
@@ -458,10 +458,10 @@ def format_report_text(top_10, activity=None, pool=None):
     lines.append(f"2️⃣ *WALK-INS*")
     lines.append("")
 
-    if not top_10:
+    if not prospects_list:
         lines.append("⚠️ Shortfall: No fresh prospects available today.")
     else:
-        for idx, p in enumerate(top_10, 1):
+        for idx, p in enumerate(prospects_list, 1):
             services = get_services_to_explore(p)
             lines.append(f"{idx}. *{p['title']}*")
             lines.append(f"• Services to explore: {services}")
@@ -501,9 +501,9 @@ def refresh_latest_report(activity=None):
         if not reports:
             return None
         latest = reports[0]
-        top_10 = latest.get("prospects", [])
+        leads = latest.get("prospects", [])[:5]
         pool = load_pool()
-        new_text = format_report_text(top_10, activity, pool)
+        new_text = format_report_text(leads, activity, pool)
         latest["text"] = new_text
         reports[0] = latest
         with open(REPORTS_FILE, "w", encoding="utf-8") as f:
@@ -513,13 +513,13 @@ def refresh_latest_report(activity=None):
         print(f">>> [Agent] Error refreshing report: {e}")
         return None
 
-def generate_daily_report(prospects_count=10):
+def generate_daily_report(prospects_count=5):
     pool = load_pool()
-    top_10 = get_prospects_for_today(count=prospects_count)
+    top_leads = get_prospects_for_today(count=prospects_count)
     activity = load_daily_activity()
     today_str = datetime.date.today().strftime("%d %B %Y")
 
-    report_text = format_report_text(top_10, activity, pool)
+    report_text = format_report_text(top_leads, activity, pool)
 
     reports = []
     if REPORTS_FILE.exists():
@@ -533,7 +533,7 @@ def generate_daily_report(prospects_count=10):
         "id": datetime.datetime.now().strftime("%Y%m%d_%H%M%S"),
         "date": today_str,
         "text": report_text,
-        "prospects": top_10,
+        "prospects": top_leads,
         "sent_status": "pending",
         "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     }
@@ -541,7 +541,7 @@ def generate_daily_report(prospects_count=10):
     with open(REPORTS_FILE, "w", encoding="utf-8") as f:
         json.dump(reports, f, indent=2, ensure_ascii=False)
 
-    return report_text, top_10, report_record["id"]
+    return report_text, top_leads, report_record["id"]
 
 def dispatch_whatsapp_report(report_text, recipient=None):
     cfg = load_env()
@@ -570,8 +570,8 @@ def run_daily_cycle(recipient=None):
     print(f">>> Time: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print(f"==========================================")
 
-    report_text, top_10, report_id = generate_daily_report(prospects_count=10)
-    print(f">>> [Agent] Generated report with {len(top_10)} verified prospects from storage pool.")
+    report_text, top_5, report_id = generate_daily_report(prospects_count=5)
+    print(f">>> [Agent] Generated report with {len(top_5)} verified prospects from storage pool.")
 
     success, res = dispatch_whatsapp_report(report_text, recipient)
     
@@ -591,7 +591,7 @@ def run_daily_cycle(recipient=None):
     stats = get_pool_stats()
     print(f">>> [Storage Pool Status] Queued in Reserve: {stats['queued']} ({stats['days_buffer']} days left) | Reported: {stats['reported']}")
     print(f">>> [Agent] CYCLE COMPLETE. Going back to sleep.\n")
-    return success, report_text, top_10
+    return success, report_text, top_5
 
 if __name__ == "__main__":
     run_daily_cycle()
