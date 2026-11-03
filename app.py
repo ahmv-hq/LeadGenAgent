@@ -56,6 +56,24 @@ async def get_dashboard():
         "pool_stats": pool_stats
     }
 
+@app.get("/api/whatsapp-status")
+async def get_wa_status():
+    import requests
+    try:
+        r = requests.get(f"{tamimah_agent.GATEWAY_URL}/status", timeout=3)
+        return r.json()
+    except Exception:
+        return {"status": "offline"}
+
+@app.get("/api/whatsapp-qr", response_class=HTMLResponse)
+async def get_wa_qr():
+    import requests
+    try:
+        r = requests.get(f"{tamimah_agent.GATEWAY_URL}/qr", timeout=3)
+        return HTMLResponse(content=r.text)
+    except Exception:
+        return HTMLResponse(content="<p>Gateway Offline</p>")
+
 @app.post("/api/run")
 async def trigger_run():
     success, text, top_10 = tamimah_agent.run_daily_cycle()

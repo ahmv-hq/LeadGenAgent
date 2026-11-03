@@ -58,7 +58,7 @@
         </div>
       </div>
       <div class="bg-white p-3 rounded-xl shadow-inner flex flex-col items-center">
-        <iframe src="http://localhost:3001/qr" class="w-64 h-64 border-0 rounded-lg overflow-hidden"></iframe>
+        <iframe src="/api/whatsapp-qr" class="w-64 h-64 border-0 rounded-lg overflow-hidden"></iframe>
         <span class="text-xs text-slate-500 mt-2 font-medium">Auto-refreshes when scanned</span>
       </div>
     </div>
@@ -229,7 +229,7 @@
   <script>
     async function checkWhatsAppStatus() {
       try {
-        const res = await fetch('http://localhost:3001/status');
+        const res = await fetch('/api/whatsapp-status');
         const data = await res.json();
         const badge = document.getElementById('wa-badge');
         const badgeText = document.getElementById('wa-badge-text');
