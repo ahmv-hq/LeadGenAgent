@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tamimah Prospecting Intelligence — Muscat, Oman</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #f8fafc; }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+  <!-- Top Navbar -->
+  <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50 px-6 py-4 flex items-center justify-between">
+    <div class="flex items-center space-x-3">
+      <div class="w-10 h-10 rounded-lg bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-bold text-xl">
+        <i class="fa-solid fa-radar"></i>
+      </div>
+      <div>
+        <h1 class="text-lg font-bold text-white tracking-tight">Tamimah Prospecting Intelligence</h1>
+        <p class="text-xs text-slate-400">Autonomous Daily BD &amp; Walk-In Targeting • Muscat, Oman</p>
+      </div>
+    </div>
+    
+    <div class="flex items-center space-x-4">
+      <div id="wa-badge" class="px-3 py-1.5 rounded-full text-xs font-medium flex items-center space-x-2 bg-amber-500/10 border border-amber-500/30 text-amber-400">
+        <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+        <span id="wa-badge-text">Checking WhatsApp...</span>
+      </div>
+
+      <button onclick="triggerRunNow()" id="btn-run" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 active:scale-95 transition text-white text-sm font-semibold rounded-lg shadow-lg shadow-emerald-900/40 flex items-center space-x-2">
+        <i class="fa-solid fa-bolt"></i>
+        <span>Wake Up &amp; Run Agent Now</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-1 max-w-7xl w-full mx-auto p-6 space-y-6">
+
+    <!-- WhatsApp QR Banner (Shown if not linked) -->
+    <div id="qr-container" class="hidden bg-slate-800/90 border border-emerald-500/40 rounded-2xl p-6 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="space-y-2 max-w-xl">
+        <div class="inline-flex items-center space-x-2 px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-400 text-xs font-semibold">
+          <i class="fa-brands fa-whatsapp text-sm"></i>
+          <span>1-Time Setup: Link Your WhatsApp Number</span>
+        </div>
+        <h2 class="text-xl font-bold text-white">Scan this QR Code to Connect Your Phone</h2>
+        <p class="text-sm text-slate-300">
+          Open WhatsApp on your phone &gt; tap <b>Settings &gt; Linked Devices &gt; Link a Device</b> &gt; scan the code on the right. Once connected, the agent will send daily walk-in targets automatically!
+        </p>
+        <div class="text-xs text-slate-400 flex items-center space-x-2 pt-2">
+          <i class="fa-solid fa-shield-halved text-emerald-400"></i>
+          <span>Uses official WhatsApp Web Multi-Device protocol. Your session is saved locally.</span>
+        </div>
+      </div>
+      <div class="bg-white p-3 rounded-xl shadow-inner flex flex-col items-center">
+        <iframe src="http://localhost:3001/qr" class="w-64 h-64 border-0 rounded-lg overflow-hidden"></iframe>
+        <span class="text-xs text-slate-500 mt-2 font-medium">Auto-refreshes when scanned</span>
+      </div>
+    </div>
+
+    <!-- Active ICP Banner & Storage Pool -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="md:col-span-2 bg-slate-900/90 border border-slate-800 rounded-xl p-4 flex flex-col justify-between space-y-2">
+        <div class="space-y-1">
+          <div class="text-xs font-bold uppercase tracking-wider text-emerald-400 flex items-center space-x-1.5">
+            <i class="fa-solid fa-sliders"></i>
+            <span>Active Prospecting Scope: Muscat, Oman (10 Per Day)</span>
+          </div>
+          <div class="flex flex-wrap gap-1.5 pt-1 text-xs">
+            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">🏥 Private Hospitals</span>
+            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">🏨 Hotels</span>
+            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">🏗️ Construction</span>
+            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">🏢 Real Estate</span>
+            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">🚛 Logistics</span>
+          </div>
+        </div>
+        <div class="text-[11px] text-slate-400">
+          <b>Target Roles:</b> CEO, Managing Director, IT Director, CTO, Operations Manager • <b>Hard Filter:</b> Verified Website &amp; Phone
+        </div>
+      </div>
+
+      <!-- Storage Pool Reserve Card -->
+      <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-4 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold uppercase tracking-wider text-blue-400 flex items-center space-x-1">
+              <i class="fa-solid fa-database"></i>
+              <span>Storage Buffer Pool</span>
+            </span>
+            <span id="pool-days-badge" class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-500/20 text-blue-300 border border-blue-500/30">2.5 Days Buffer</span>
+          </div>
+          <div class="mt-2 flex items-baseline space-x-2">
+            <span class="text-2xl font-bold text-white" id="pool-queued-count">25</span>
+            <span class="text-xs text-slate-400">queued in reserve (0 API cost)</span>
+          </div>
+          <div class="text-[11px] text-slate-500 mt-0.5">
+            Total verified: <span id="pool-total-count" class="text-slate-300">35</span> • Sent: <span id="pool-sent-count" class="text-slate-300">10</span>
+          </div>
+        </div>
+
+        <button onclick="refillPoolNow()" id="btn-refill" class="mt-3 w-full py-1.5 bg-blue-600/30 hover:bg-blue-600/50 border border-blue-500/40 text-blue-300 rounded text-xs font-semibold flex items-center justify-center space-x-1.5 transition">
+          <i class="fa-solid fa-cloud-arrow-down"></i>
+          <span>Harvest &amp; Refill Pool Ahead</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Two Column Layout: Targets & Report -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+      <!-- Left Column: 5 Target Walk-In Dossiers (2 cols) -->
+      <div class="lg:col-span-2 space-y-4">
+        <div class="flex items-center justify-between">
+          <h2 class="text-lg font-bold text-white flex items-center space-x-2">
+            <i class="fa-solid fa-location-crosshairs text-emerald-400"></i>
+            <span>Today's Suggested Walk-In Targets</span>
+          </h2>
+          <span class="text-xs text-slate-400" id="stat-prospects-count">10 Targets in Muscat</span>
+        </div>
+
+        <div id="targets-list" class="space-y-3">
+          <div class="p-8 text-center bg-slate-900/40 border border-slate-800 rounded-xl text-slate-400 text-sm">
+            Loading today's walk-in targets...
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: WhatsApp Report Preview & Activities (1 col) -->
+      <div class="space-y-4">
+        
+        <!-- Activity Quick Input & Calls Management -->
+        <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-4 space-y-3">
+          <div class="flex items-center justify-between">
+            <h3 class="text-sm font-bold text-white flex items-center space-x-2">
+              <i class="fa-solid fa-phone-volume text-blue-400"></i>
+              <span>Calls &amp; Daily Activity</span>
+            </h3>
+            <span class="text-[10px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded font-medium">Live Sync</span>
+          </div>
+
+          <!-- New Field: Add Any Business to Calls -->
+          <div class="p-3 bg-slate-950/80 border border-slate-800 rounded-lg space-y-2">
+            <div class="text-[11px] font-bold uppercase tracking-wider text-blue-400 flex items-center space-x-1.5">
+              <i class="fa-solid fa-plus-circle"></i>
+              <span>Add Any Business to Calls</span>
+            </div>
+            <div class="space-y-1.5">
+              <input type="text" id="call-input-name" placeholder="Business Name (any company in Muscat)" class="w-full bg-slate-900 border border-slate-700 rounded px-2.5 py-1.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-blue-500">
+              <div class="flex gap-1.5">
+                <select id="call-input-status" class="flex-1 bg-slate-900 border border-slate-700 rounded px-2 py-1.5 text-xs text-slate-200 focus:outline-none focus:border-blue-500">
+                  <option value="Meeting Booked">Meeting Booked</option>
+                  <option value="Follow-up Required">Follow-up Required</option>
+                  <option value="Call Scheduled">Call Scheduled</option>
+                  <option value="Discussion Ongoing">Discussion Ongoing</option>
+                  <option value="Connected - Interested">Connected - Interested</option>
+                  <option value="Proposal Sent">Proposal Sent</option>
+                  <option value="No Answer / Retry">No Answer / Retry</option>
+                </select>
+                <button type="button" onclick="addCustomCall()" class="px-3 py-1.5 bg-blue-600 hover:bg-blue-500 text-white rounded text-xs font-semibold flex items-center space-x-1 shadow transition">
+                  <i class="fa-solid fa-plus"></i>
+                  <span>Add to Calls</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Calls List -->
+          <div class="space-y-1">
+            <label class="text-slate-300 font-medium text-xs flex items-center justify-between">
+              <span>1. Calls List:</span>
+              <span class="text-[10px] text-slate-500">Company — Status</span>
+            </label>
+            <textarea id="act-calls" rows="4" placeholder="United Cargo &amp; Logistics — Meeting Booked&#10;AGS Logistics — Follow-up Required" class="w-full bg-slate-950 border border-slate-800 rounded p-2 text-xs font-mono text-slate-200 focus:outline-none focus:border-emerald-500"></textarea>
+          </div>
+
+          <!-- Follow-ups List -->
+          <div class="space-y-1">
+            <label class="text-slate-300 font-medium text-xs flex items-center justify-between">
+              <span>2. Follow-ups:</span>
+              <span class="text-[10px] text-slate-500">Company — Status/Action</span>
+            </label>
+            <textarea id="act-followups" rows="3" placeholder="Sarooj Construction — Follow-up Required&#10;Badr Al Samaa Royal Hospital — Discussion Ongoing" class="w-full bg-slate-950 border border-slate-800 rounded p-2 text-xs font-mono text-slate-200 focus:outline-none focus:border-emerald-500"></textarea>
+          </div>
+
+          <button onclick="saveActivity(true)" class="w-full py-2 bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-200 rounded-lg transition flex items-center justify-center space-x-1.5 border border-slate-700">
+            <i class="fa-solid fa-floppy-disk"></i>
+            <span>Save &amp; Refresh Report Preview</span>
+          </button>
+        </div>
+
+        <!-- WhatsApp Report Preview -->
+        <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-4 space-y-3">
+          <div class="flex items-center justify-between">
+            <h3 class="text-sm font-bold text-white flex items-center space-x-2">
+              <i class="fa-brands fa-whatsapp text-emerald-400"></i>
+              <span>Daily Report Preview</span>
+            </h3>
+            <button onclick="copyReport()" class="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 active:scale-95 transition text-xs text-slate-200 rounded flex items-center space-x-1">
+              <i class="fa-regular fa-copy"></i>
+              <span id="btn-copy-text">Copy Text</span>
+            </button>
+          </div>
+
+          <div class="relative">
+            <textarea id="report-text" readonly class="w-full h-80 bg-slate-950/90 border border-slate-800/80 rounded-lg p-3 text-xs font-mono text-slate-300 resize-none focus:outline-none"></textarea>
+          </div>
+
+          <button onclick="sendReportNow()" id="btn-send-wa" class="w-full py-2 bg-emerald-600 hover:bg-emerald-500 active:scale-95 transition text-white text-xs font-bold rounded-lg shadow-md flex items-center justify-center space-x-2">
+            <i class="fa-brands fa-whatsapp text-sm"></i>
+            <span>Send to WhatsApp Now</span>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="border-t border-slate-800/80 bg-slate-900/40 text-center py-4 text-xs text-slate-500">
+    Tamimah Telecom &amp; Computer Technology (TTCT) • Muscat, Oman • Autonomous Prospecting System
+  </footer>
+
+  <script>
+    async function checkWhatsAppStatus() {
+      try {
+        const res = await fetch('http://localhost:3001/status');
+        const data = await res.json();
+        const badge = document.getElementById('wa-badge');
+        const badgeText = document.getElementById('wa-badge-text');
+        const qrContainer = document.getElementById('qr-container');
+
+        if (data.status === 'connected') {
+          badge.className = "px-3 py-1.5 rounded-full text-xs font-medium flex items-center space-x-2 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400";
+          badgeText.innerHTML = `<i class="fa-solid fa-check"></i> <span>WhatsApp Connected: ${data.user || 'Active'}</span>`;
+          qrContainer.classList.add('hidden');
+        } else {
+          badge.className = "px-3 py-1.5 rounded-full text-xs font-medium flex items-center space-x-2 bg-amber-500/10 border border-amber-500/30 text-amber-400";
+          badgeText.innerHTML = `<i class="fa-solid fa-qrcode"></i> <span>Scan QR Code to Link</span>`;
+          qrContainer.classList.remove('hidden');
+        }
+      } catch (err) {
+        document.getElementById('wa-badge-text').innerText = "Gateway Offline";
+      }
+    }
+
+    async function loadDashboardData() {
+      try {
+        const res = await fetch('/api/dashboard');
+        const data = await res.json();
+
+        // Pool stats
+        if (data.pool_stats) {
+          document.getElementById('pool-queued-count').innerText = data.pool_stats.queued;
+          document.getElementById('pool-total-count').innerText = data.pool_stats.total;
+          document.getElementById('pool-sent-count').innerText = data.pool_stats.reported;
+          document.getElementById('pool-days-badge').innerText = `${data.pool_stats.days_buffer} Days Buffer`;
+        }
+
+        // Targets
+        const list = document.getElementById('targets-list');
+        const prospects = data.latest_report?.prospects || [];
+        document.getElementById('stat-prospects-count').innerText = `${prospects.length} Targets in Muscat`;
+
+        if (prospects.length === 0) {
+          list.innerHTML = `<div class="p-8 text-center bg-slate-900/40 border border-slate-800 rounded-xl text-slate-400 text-sm">
+            No targets generated yet. Click <b>"Wake Up & Run Agent Now"</b> to start.
+          </div>`;
+        } else {
+          list.innerHTML = prospects.map((p, idx) => `
+            <div class="bg-slate-900/80 border border-slate-800 hover:border-slate-700 transition rounded-xl p-5 space-y-3">
+              <div class="flex items-start justify-between">
+                <div>
+                  <div class="flex items-center space-x-2">
+                    <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold flex items-center justify-center">${idx + 1}</span>
+                    <h3 class="text-base font-bold text-white">${p.title}</h3>
+                  </div>
+                  <span class="inline-block mt-1 px-2.5 py-0.5 rounded text-[11px] font-medium bg-slate-800 text-slate-300">
+                    ${p.category}
+                  </span>
+                </div>
+                <div class="text-right">
+                  <span class="px-2.5 py-1 rounded text-xs font-bold ${p.score >= 80 ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/30' : 'bg-blue-500/10 text-blue-400 border border-blue-500/30'}">
+                    ${p.score}/100 Priority
+                  </span>
+                </div>
+              </div>
+
+              <!-- Contact & Location Grid -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs text-slate-300">
+                <div class="flex items-center space-x-2">
+                  <i class="fa-solid fa-location-dot text-slate-500 w-4"></i>
+                  <span class="truncate">${p.address}</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <i class="fa-solid fa-phone text-slate-500 w-4"></i>
+                  <a href="tel:${p.phone}" class="text-emerald-400 font-semibold hover:underline">${p.phone}</a>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <i class="fa-solid fa-globe text-slate-500 w-4"></i>
+                  <a href="${p.website}" target="_blank" class="text-blue-400 hover:underline truncate">${p.website}</a>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <i class="fa-solid fa-map-location-dot text-slate-500 w-4"></i>
+                  <a href="${p.google_maps_url}" target="_blank" class="text-slate-400 hover:text-white underline">Open in Google Maps</a>
+                </div>
+              </div>
+
+              <!-- Decision-Maker & Scraped Contact Intelligence -->
+              <div class="p-2.5 bg-blue-950/40 border border-blue-900/50 rounded-lg text-xs space-y-1">
+                <div class="font-semibold text-blue-400 flex items-center space-x-1">
+                  <i class="fa-solid fa-user-tie"></i>
+                  <span>Target Decision-Maker / Contact:</span>
+                </div>
+                <div class="text-slate-200">
+                  <b>Identified:</b> ${p.decision_makers && p.decision_makers.length > 0 ? p.decision_makers.join(', ') : p.target_persona}
+                </div>
+                ${p.emails && p.emails.length > 0 ? `
+                  <div class="text-slate-300"><b>Direct Email:</b> <a href="mailto:${p.emails[0]}" class="text-blue-400 hover:underline">${p.emails.slice(0, 2).join(', ')}</a></div>
+                ` : ''}
+              </div>
+
+              <!-- Services to Explore in Walk-in -->
+              <div class="p-3 bg-emerald-950/20 rounded-lg border border-emerald-900/40 space-y-1.5">
+                <div class="text-xs font-semibold text-emerald-400 flex items-center justify-between">
+                  <span class="flex items-center space-x-1.5">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <span>Services to Explore:</span>
+                  </span>
+                  <button type="button" onclick="quickAddCall('${p.title.replace(/'/g, "\\'")}')" class="px-2 py-0.5 bg-emerald-600/30 hover:bg-emerald-600/50 text-emerald-300 rounded text-[11px] font-medium transition flex items-center space-x-1">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>+ Log Call</span>
+                  </button>
+                </div>
+                <div class="text-xs text-slate-200 font-semibold leading-relaxed">
+                  ${getServicesText(p)}
+                </div>
+                <div class="text-[11px] text-slate-400 leading-relaxed">
+                  ${p.why_it_fits || ''}
+                </div>
+              </div>
+            </div>
+          `).join('');
+        }
+
+        // Report preview
+        if (data.latest_report?.text) {
+          document.getElementById('report-text').value = data.latest_report.text;
+        }
+
+        // Activity fields
+        if (data.activity) {
+          if (data.activity.calls_made && data.activity.calls_made !== "Not supplied") document.getElementById('act-calls').value = data.activity.calls_made;
+          if (data.activity.follow_ups && data.activity.follow_ups !== "Not supplied") document.getElementById('act-followups').value = data.activity.follow_ups;
+        }
+
+      } catch (err) {
+        console.error("Error loading dashboard data:", err);
+      }
+    }
+
+    function getServicesText(p) {
+      if (p.services_to_explore) return p.services_to_explore;
+      const comb = `${p.category || ''} ${p.title || ''} ${p.tamimah_pillar || ''} ${p.tamimah_offering || ''}`.toLowerCase();
+      if (comb.match(/hospital|clinic|health|medical|doctor|care/)) {
+        return "Arabic Voice AI, WhatsApp Patient Appointments & Omnichannel Contact Center";
+      } else if (comb.match(/hotel|resort|inn|stay|hospitality/)) {
+        return "Omnichannel Guest Inquiries (WhatsApp/Web), Visitor QR Passes & CRM";
+      } else if (comb.match(/construction|contract|building|engineer|machinery/)) {
+        return "Fleet & Heavy Machinery Telematics (GPS Tracking), Field Operations & Job Cards";
+      } else if (comb.match(/real estate|property|realty|properties|estate/)) {
+        return "Property & Lease Management ERP, Tenant Portal & Online Payment Integration";
+      } else if (comb.match(/logistics|freight|transport|cargo|shipping|courier/)) {
+        return "GPS Fleet Telematics & Route Compliance, Fuel Monitoring & Dispatch Automation";
+      }
+      return "Enterprise ERP (Odoo), Customer WhatsApp Messaging & Field Operations";
+    }
+
+    function quickAddCall(bizName) {
+      const input = document.getElementById('call-input-name');
+      input.value = bizName;
+      input.focus();
+      input.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    function addCustomCall() {
+      const nameInput = document.getElementById('call-input-name');
+      const statusSelect = document.getElementById('call-input-status');
+      const name = nameInput.value.trim();
+      const status = statusSelect.value;
+      if (!name) {
+        alert("Please enter a business name first.");
+        return;
+      }
+      const callLine = `${name} — ${status}`;
+      const callsArea = document.getElementById('act-calls');
+      if (callsArea.value.trim()) {
+        callsArea.value = callsArea.value.trim() + "\n" + callLine;
+      } else {
+        callsArea.value = callLine;
+      }
+      nameInput.value = "";
+      saveActivity(false);
+    }
+
+    async function refillPoolNow() {
+      const btn = document.getElementById('btn-refill');
+      btn.disabled = true;
+      btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> <span>Harvesting Prospects...</span>`;
+      try {
+        const res = await fetch('/api/refill-pool', { method: 'POST' });
+        const d = await res.json();
+        alert(`Harvest complete! Added ${d.added} new prospects to storage reserve.`);
+        await loadDashboardData();
+      } catch (err) {
+        alert("Error refilling pool: " + err.message);
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = `<i class="fa-solid fa-cloud-arrow-down"></i> <span>Harvest & Refill Pool Ahead</span>`;
+      }
+    }
+
+    async function triggerRunNow() {
+      const btn = document.getElementById('btn-run');
+      btn.disabled = true;
+      btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> <span>Searching Muscat &amp; Verifying...</span>`;
+      try {
+        const res = await fetch('/api/run', { method: 'POST' });
+        const d = await res.json();
+        alert(d.message || "Cycle completed!");
+        await loadDashboardData();
+      } catch (err) {
+        alert("Error executing cycle: " + err.message);
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = `<i class="fa-solid fa-bolt"></i> <span>Wake Up &amp; Run Agent Now</span>`;
+      }
+    }
+
+    async function saveActivity(showAlert = true) {
+      const calls = document.getElementById('act-calls').value.trim();
+      const followups = document.getElementById('act-followups').value.trim();
+
+      try {
+        const res = await fetch('/api/activity', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            calls_made: calls,
+            follow_ups: followups
+          })
+        });
+        const d = await res.json();
+        if (d.updated_text) {
+          document.getElementById('report-text').value = d.updated_text;
+        }
+        if (showAlert) {
+          alert("Activity saved! Report preview updated.");
+        }
+      } catch (err) {
+        if (showAlert) alert("Error saving activity: " + err.message);
+      }
+    }
+
+    function copyReport() {
+      const text = document.getElementById('report-text').value;
+      navigator.clipboard.writeText(text);
+      const btn = document.getElementById('btn-copy-text');
+      btn.innerText = "Copied!";
+      setTimeout(() => btn.innerText = "Copy Text", 2000);
+    }
+
+    async function sendReportNow() {
+      const btn = document.getElementById('btn-send-wa');
+      btn.disabled = true;
+      btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> <span>Sending via WhatsApp...</span>`;
+      try {
+        const res = await fetch('/api/send-whatsapp', { method: 'POST' });
+        const d = await res.json();
+        if (d.success) {
+          alert("WhatsApp message sent successfully!");
+        } else {
+          alert("Failed to send: " + (d.error || "Make sure WhatsApp QR is linked."));
+        }
+      } catch (e) {
+        alert("Error: " + e.message);
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = `<i class="fa-brands fa-whatsapp text-sm"></i> <span>Send to WhatsApp Now</span>`;
+      }
+    }
+
+    // Polling status
+    checkWhatsAppStatus();
+    loadDashboardData();
+    setInterval(checkWhatsAppStatus, 5000);
+  </script>
+
+</body>
+</html>
