@@ -242,7 +242,7 @@
           select.innerHTML = `<option value="">No daily runs found</option>`;
         } else {
           select.innerHTML = allReports.map((r, idx) => {
-            const label = idx === 0 ? `Today (${r.date}) — ${r.prospects?.length || 0} Leads [Latest]` : `${r.date} (${r.timestamp ? r.timestamp.split(' ')[1] : ''}) — ${r.prospects?.length || 0} Leads`;
+            const label = idx === 0 ? `Today — ${r.date} (${r.prospects?.length || 0} Leads Generated)` : `${r.date} (${r.prospects?.length || 0} Leads Generated)`;
             return `<option value="${r.id}" ${idx === 0 ? 'selected' : ''}>${label}</option>`;
           }).join('');
 

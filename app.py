@@ -49,12 +49,54 @@ async def get_dashboard():
         except Exception:
             pass
 
-    latest_report = reports[0] if reports else None
+    pool = tamimah_agent.load_pool()
+
+    # Consolidate strictly by date: One entry per date containing all unique leads generated on that date
+    day_map = {}
+    today_str = datetime.date.today().strftime("%d %B %Y")
+
+    for r in reports:
+        d = r.get("date") or today_str
+        if d not in day_map:
+            day_map[d] = {
+                "id": d,
+                "date": d,
+                "text": r.get("text", ""),
+                "sent_status": r.get("sent_status", "pending"),
+                "timestamp": r.get("timestamp", ""),
+                "prospects": []
+            }
+        seen = {p.get("title") for p in day_map[d]["prospects"]}
+        for p in r.get("prospects", []):
+            if p.get("title") and p.get("title") not in seen:
+                day_map[d]["prospects"].append(p)
+                seen.add(p.get("title"))
+
+    # Also capture all prospects in pool with this reported_date
+    for p in pool:
+        d = p.get("reported_date")
+        if d:
+            if d not in day_map:
+                day_map[d] = {
+                    "id": d,
+                    "date": d,
+                    "text": "",
+                    "sent_status": "delivered",
+                    "timestamp": p.get("discovered_at", ""),
+                    "prospects": []
+                }
+            seen = {x.get("title") for x in day_map[d]["prospects"]}
+            if p.get("title") and p.get("title") not in seen:
+                day_map[d]["prospects"].append(p)
+                seen.add(p.get("title"))
+
+    day_records = list(day_map.values())
+    latest_report = day_records[0] if day_records else None
     activity = tamimah_agent.load_daily_activity()
 
     return {
         "latest_report": latest_report,
-        "reports": reports[:30],
+        "reports": day_records,
         "activity": activity
     }
 
