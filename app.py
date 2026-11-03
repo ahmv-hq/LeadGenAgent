@@ -31,30 +31,45 @@ class ActivityInput(BaseModel):
     meetings_demos: str = ""
     follow_ups: str = ""
 
+class SendWhatsAppInput(BaseModel):
+    report_id: str = None
+    text: str = None
+
 @app.get("/", response_class=FileResponse)
 async def read_root():
     return FileResponse(str(INDEX_FILE))
 
 @app.get("/api/dashboard")
 async def get_dashboard():
-    latest_report = None
+    reports = []
     if tamimah_agent.REPORTS_FILE.exists():
         try:
             with open(tamimah_agent.REPORTS_FILE, "r", encoding="utf-8") as f:
                 reports = json.load(f)
-                if reports:
-                    latest_report = reports[0]
         except Exception:
             pass
 
+    latest_report = reports[0] if reports else None
     activity = tamimah_agent.load_daily_activity()
-    pool_stats = tamimah_agent.get_pool_stats()
 
     return {
         "latest_report": latest_report,
-        "activity": activity,
-        "pool_stats": pool_stats
+        "reports": reports[:30],
+        "activity": activity
     }
+
+@app.get("/api/report/{report_id}")
+async def get_single_report(report_id: str):
+    if tamimah_agent.REPORTS_FILE.exists():
+        try:
+            with open(tamimah_agent.REPORTS_FILE, "r", encoding="utf-8") as f:
+                reports = json.load(f)
+            for r in reports:
+                if r.get("id") == report_id:
+                    return {"report": r}
+        except Exception:
+            pass
+    return JSONResponse(status_code=404, content={"error": "Report not found"})
 
 @app.get("/api/whatsapp-status")
 async def get_wa_status():
@@ -84,16 +99,6 @@ async def trigger_run():
         "prospects_found": len(top_10)
     }
 
-@app.post("/api/refill-pool")
-async def refill_pool():
-    new_items = tamimah_agent.discover_and_replenish_pool()
-    stats = tamimah_agent.get_pool_stats()
-    return {
-        "success": True,
-        "added": len(new_items),
-        "pool_stats": stats
-    }
-
 @app.post("/api/activity")
 async def update_activity(data: ActivityInput):
     act_dict = data.model_dump()
@@ -103,19 +108,36 @@ async def update_activity(data: ActivityInput):
     return {"success": True, "updated_text": updated_text}
 
 @app.post("/api/send-whatsapp")
-async def send_whatsapp_now():
-    if not tamimah_agent.REPORTS_FILE.exists():
-        return {"success": False, "error": "No report generated yet."}
-    try:
-        with open(tamimah_agent.REPORTS_FILE, "r", encoding="utf-8") as f:
-            reports = json.load(f)
-            if not reports:
-                return {"success": False, "error": "No report found."}
-            text = reports[0]["text"]
-            success, res = tamimah_agent.dispatch_whatsapp_report(text)
-            return {"success": success, "result": res}
-    except Exception as e:
-        return {"success": False, "error": str(e)}
+async def send_whatsapp_now(data: SendWhatsAppInput = None):
+    text_to_send = None
+    if data and data.text:
+        text_to_send = data.text
+    elif data and data.report_id:
+        if tamimah_agent.REPORTS_FILE.exists():
+            try:
+                with open(tamimah_agent.REPORTS_FILE, "r", encoding="utf-8") as f:
+                    reports = json.load(f)
+                for r in reports:
+                    if r.get("id") == data.report_id:
+                        text_to_send = r.get("text")
+                        break
+            except Exception:
+                pass
+
+    if not text_to_send:
+        if not tamimah_agent.REPORTS_FILE.exists():
+            return {"success": False, "error": "No report generated yet."}
+        try:
+            with open(tamimah_agent.REPORTS_FILE, "r", encoding="utf-8") as f:
+                reports = json.load(f)
+                if not reports:
+                    return {"success": False, "error": "No report found."}
+                text_to_send = reports[0]["text"]
+        except Exception as e:
+            return {"success": False, "error": str(e)}
+
+    success, res = tamimah_agent.dispatch_whatsapp_report(text_to_send)
+    return {"success": success, "result": res}
 
 if __name__ == "__main__":
     import uvicorn

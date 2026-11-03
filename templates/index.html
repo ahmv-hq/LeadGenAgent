@@ -3,35 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tamimah Prospecting Intelligence — Muscat, Oman</title>
+  <title>LeadGen Agent — Muscat, Oman</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-    body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #f8fafc; }
+    body { font-family: 'Inter', sans-serif; background-color: #0b1120; color: #f8fafc; }
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #0b1120; }
+    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #334155; }
   </style>
 </head>
 <body class="min-h-screen flex flex-col">
 
   <!-- Top Navbar -->
-  <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50 px-6 py-4 flex items-center justify-between">
+  <header class="border-b border-slate-800 bg-slate-900/90 backdrop-blur sticky top-0 z-50 px-6 py-3.5 flex flex-wrap items-center justify-between gap-4">
     <div class="flex items-center space-x-3">
-      <div class="w-10 h-10 rounded-lg bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-bold text-xl">
+      <div class="w-9 h-9 rounded-lg bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-bold text-lg">
         <i class="fa-solid fa-radar"></i>
       </div>
       <div>
-        <h1 class="text-lg font-bold text-white tracking-tight">Tamimah Prospecting Intelligence</h1>
-        <p class="text-xs text-slate-400">Autonomous Daily BD &amp; Walk-In Targeting • Muscat, Oman</p>
+        <h1 class="text-base font-bold text-white tracking-tight flex items-center space-x-2">
+          <span>LeadGen Agent</span>
+          <span class="text-[10px] font-semibold uppercase px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">Muscat, Oman</span>
+        </h1>
+        <p class="text-xs text-slate-400">Autonomous Daily BD Prospecting &amp; Reporting</p>
       </div>
     </div>
     
-    <div class="flex items-center space-x-4">
-      <div id="wa-badge" class="px-3 py-1.5 rounded-full text-xs font-medium flex items-center space-x-2 bg-amber-500/10 border border-amber-500/30 text-amber-400">
-        <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
-        <span id="wa-badge-text">Checking WhatsApp...</span>
+    <div class="flex items-center space-x-3">
+      <div id="wa-badge" class="px-3 py-1.5 rounded-full text-xs font-medium flex items-center space-x-2 bg-slate-800 border border-slate-700 text-slate-400">
+        <span class="w-2 h-2 rounded-full bg-slate-500 animate-pulse"></span>
+        <span id="wa-badge-text">Connecting...</span>
       </div>
 
-      <button onclick="triggerRunNow()" id="btn-run" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 active:scale-95 transition text-white text-sm font-semibold rounded-lg shadow-lg shadow-emerald-900/40 flex items-center space-x-2">
+      <button onclick="triggerRunNow()" id="btn-run" class="px-4 py-1.5 bg-emerald-600 hover:bg-emerald-500 active:scale-95 transition text-white text-xs font-semibold rounded-lg shadow-md flex items-center space-x-2">
         <i class="fa-solid fa-bolt"></i>
         <span>Wake Up &amp; Run Agent Now</span>
       </button>
@@ -39,101 +47,71 @@
   </header>
 
   <!-- Main Content -->
-  <main class="flex-1 max-w-7xl w-full mx-auto p-6 space-y-6">
+  <main class="flex-1 max-w-7xl w-full mx-auto p-4 md:p-6 space-y-5">
 
-    <!-- WhatsApp QR Banner (Shown if not linked) -->
-    <div id="qr-container" class="hidden bg-slate-800/90 border border-emerald-500/40 rounded-2xl p-6 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6">
-      <div class="space-y-2 max-w-xl">
+    <!-- WhatsApp QR Banner (Only shown if disconnected) -->
+    <div id="qr-container" class="hidden bg-slate-900 border border-emerald-500/40 rounded-xl p-5 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="space-y-2">
         <div class="inline-flex items-center space-x-2 px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-400 text-xs font-semibold">
           <i class="fa-brands fa-whatsapp text-sm"></i>
-          <span>1-Time Setup: Link Your WhatsApp Number</span>
+          <span>1-Time Setup: Connect WhatsApp</span>
         </div>
-        <h2 class="text-xl font-bold text-white">Scan this QR Code to Connect Your Phone</h2>
-        <p class="text-sm text-slate-300">
-          Open WhatsApp on your phone &gt; tap <b>Settings &gt; Linked Devices &gt; Link a Device</b> &gt; scan the code on the right. Once connected, the agent will send daily walk-in targets automatically!
+        <h2 class="text-lg font-bold text-white">Scan to Link WhatsApp Gateway</h2>
+        <p class="text-xs text-slate-300 max-w-xl">
+          Open WhatsApp on your phone &gt; tap <b>Settings &gt; Linked Devices &gt; Link a Device</b> &gt; scan the QR code.
         </p>
-        <div class="text-xs text-slate-400 flex items-center space-x-2 pt-2">
-          <i class="fa-solid fa-shield-halved text-emerald-400"></i>
-          <span>Uses official WhatsApp Web Multi-Device protocol. Your session is saved locally.</span>
-        </div>
       </div>
-      <div class="bg-white p-3 rounded-xl shadow-inner flex flex-col items-center">
-        <iframe src="/api/whatsapp-qr" class="w-64 h-64 border-0 rounded-lg overflow-hidden"></iframe>
-        <span class="text-xs text-slate-500 mt-2 font-medium">Auto-refreshes when scanned</span>
+      <div class="bg-white p-2 rounded-lg shadow flex flex-col items-center">
+        <iframe src="/api/whatsapp-qr" class="w-48 h-48 border-0 rounded overflow-hidden"></iframe>
       </div>
     </div>
 
-    <!-- Active ICP Banner & Storage Pool -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-      <div class="md:col-span-2 bg-slate-900/90 border border-slate-800 rounded-xl p-4 flex flex-col justify-between space-y-2">
-        <div class="space-y-1">
-          <div class="text-xs font-bold uppercase tracking-wider text-emerald-400 flex items-center space-x-1.5">
-            <i class="fa-solid fa-sliders"></i>
-            <span>Active Prospecting Scope: Muscat, Oman (10 Per Day)</span>
-          </div>
-          <div class="flex flex-wrap gap-1.5 pt-1 text-xs">
-            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">🏥 Private Hospitals</span>
-            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">🏨 Hotels</span>
-            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">🏗️ Construction</span>
-            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">🏢 Real Estate</span>
-            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">🚛 Logistics</span>
-          </div>
+    <!-- Day-Wise Selector Bar -->
+    <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      <div class="flex items-center space-x-3 w-full md:w-auto">
+        <div class="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center space-x-1.5 whitespace-nowrap">
+          <i class="fa-regular fa-calendar-days text-emerald-400"></i>
+          <span>Select Date:</span>
         </div>
-        <div class="text-[11px] text-slate-400">
-          <b>Target Roles:</b> CEO, Managing Director, IT Director, CTO, Operations Manager • <b>Hard Filter:</b> Verified Website &amp; Phone
-        </div>
+        <select id="date-select" onchange="onSelectDay(this.value)" class="flex-1 md:w-80 bg-slate-950 border border-slate-700 hover:border-slate-600 rounded-lg px-3 py-1.5 text-xs font-medium text-white focus:outline-none focus:border-emerald-500 transition">
+          <option value="">Loading dates...</option>
+        </select>
       </div>
 
-      <!-- Storage Pool Reserve Card -->
-      <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-4 flex flex-col justify-between">
-        <div>
-          <div class="flex items-center justify-between">
-            <span class="text-xs font-bold uppercase tracking-wider text-blue-400 flex items-center space-x-1">
-              <i class="fa-solid fa-database"></i>
-              <span>Storage Buffer Pool</span>
-            </span>
-            <span id="pool-days-badge" class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-500/20 text-blue-300 border border-blue-500/30">2.5 Days Buffer</span>
-          </div>
-          <div class="mt-2 flex items-baseline space-x-2">
-            <span class="text-2xl font-bold text-white" id="pool-queued-count">25</span>
-            <span class="text-xs text-slate-400">queued in reserve (0 API cost)</span>
-          </div>
-          <div class="text-[11px] text-slate-500 mt-0.5">
-            Total verified: <span id="pool-total-count" class="text-slate-300">35</span> • Sent: <span id="pool-sent-count" class="text-slate-300">10</span>
-          </div>
-        </div>
-
-        <button onclick="refillPoolNow()" id="btn-refill" class="mt-3 w-full py-1.5 bg-blue-600/30 hover:bg-blue-600/50 border border-blue-500/40 text-blue-300 rounded text-xs font-semibold flex items-center justify-center space-x-1.5 transition">
-          <i class="fa-solid fa-cloud-arrow-down"></i>
-          <span>Harvest &amp; Refill Pool Ahead</span>
-        </button>
+      <div class="flex flex-wrap items-center gap-2 text-xs">
+        <span id="badge-leads-count" class="px-2.5 py-1 rounded-full font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+          -- Leads
+        </span>
+        <span id="badge-sent-status" class="px-2.5 py-1 rounded-full font-medium bg-slate-800 text-slate-300 border border-slate-700">
+          Delivery: Checking...
+        </span>
       </div>
     </div>
 
-    <!-- Two Column Layout: Targets & Report -->
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <!-- Two Column Layout: Leads (Left) & Reporting (Right) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
 
-      <!-- Left Column: 5 Target Walk-In Dossiers (2 cols) -->
-      <div class="lg:col-span-2 space-y-4">
+      <!-- Left Column: Day-Wise Leads (7 cols) -->
+      <div class="lg:col-span-7 space-y-4">
         <div class="flex items-center justify-between">
-          <h2 class="text-lg font-bold text-white flex items-center space-x-2">
-            <i class="fa-solid fa-location-crosshairs text-emerald-400"></i>
-            <span>Today's Suggested Walk-In Targets</span>
+          <h2 class="text-base font-bold text-white flex items-center space-x-2">
+            <i class="fa-solid fa-location-dot text-emerald-400"></i>
+            <span id="leads-title">Walk-In Leads Generated</span>
           </h2>
-          <span class="text-xs text-slate-400" id="stat-prospects-count">10 Targets in Muscat</span>
+          <span class="text-xs text-slate-400" id="leads-subtitle">Muscat, Oman</span>
         </div>
 
         <div id="targets-list" class="space-y-3">
-          <div class="p-8 text-center bg-slate-900/40 border border-slate-800 rounded-xl text-slate-400 text-sm">
-            Loading today's walk-in targets...
+          <div class="p-8 text-center bg-slate-900/40 border border-slate-800 rounded-xl text-slate-400 text-xs">
+            Loading leads...
           </div>
         </div>
       </div>
 
-      <!-- Right Column: WhatsApp Report Preview & Activities (1 col) -->
-      <div class="space-y-4">
+      <!-- Right Column: Simple Reporting & Sales Activity (5 cols) -->
+      <div class="lg:col-span-5 space-y-4">
         
-        <!-- Activity Quick Input & Calls Management -->
+        <!-- Activity & Calls Module -->
         <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-4 space-y-3">
           <div class="flex items-center justify-between">
             <h3 class="text-sm font-bold text-white flex items-center space-x-2">
@@ -143,7 +121,7 @@
             <span class="text-[10px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded font-medium">Live Sync</span>
           </div>
 
-          <!-- New Field: Add Any Business to Calls -->
+          <!-- Add Any Business to Calls Field -->
           <div class="p-3 bg-slate-950/80 border border-slate-800 rounded-lg space-y-2">
             <div class="text-[11px] font-bold uppercase tracking-wider text-blue-400 flex items-center space-x-1.5">
               <i class="fa-solid fa-plus-circle"></i>
@@ -161,9 +139,9 @@
                   <option value="Proposal Sent">Proposal Sent</option>
                   <option value="No Answer / Retry">No Answer / Retry</option>
                 </select>
-                <button type="button" onclick="addCustomCall()" class="px-3 py-1.5 bg-blue-600 hover:bg-blue-500 text-white rounded text-xs font-semibold flex items-center space-x-1 shadow transition">
+                <button type="button" onclick="addCustomCall()" class="px-3 py-1.5 bg-blue-600 hover:bg-blue-500 active:scale-95 text-white rounded text-xs font-semibold flex items-center space-x-1 shadow transition">
                   <i class="fa-solid fa-plus"></i>
-                  <span>Add to Calls</span>
+                  <span>Add</span>
                 </button>
               </div>
             </div>
@@ -175,7 +153,7 @@
               <span>1. Calls List:</span>
               <span class="text-[10px] text-slate-500">Company — Status</span>
             </label>
-            <textarea id="act-calls" rows="4" placeholder="United Cargo &amp; Logistics — Meeting Booked&#10;AGS Logistics — Follow-up Required" class="w-full bg-slate-950 border border-slate-800 rounded p-2 text-xs font-mono text-slate-200 focus:outline-none focus:border-emerald-500"></textarea>
+            <textarea id="act-calls" rows="3" placeholder="United Cargo &amp; Logistics — Meeting Booked&#10;AGS Logistics — Follow-up Required" class="w-full bg-slate-950 border border-slate-800 rounded p-2 text-xs font-mono text-slate-200 focus:outline-none focus:border-emerald-500"></textarea>
           </div>
 
           <!-- Follow-ups List -->
@@ -184,35 +162,35 @@
               <span>2. Follow-ups:</span>
               <span class="text-[10px] text-slate-500">Company — Status/Action</span>
             </label>
-            <textarea id="act-followups" rows="3" placeholder="Sarooj Construction — Follow-up Required&#10;Badr Al Samaa Royal Hospital — Discussion Ongoing" class="w-full bg-slate-950 border border-slate-800 rounded p-2 text-xs font-mono text-slate-200 focus:outline-none focus:border-emerald-500"></textarea>
+            <textarea id="act-followups" rows="2" placeholder="Sarooj Construction — Follow-up Required&#10;Badr Al Samaa Royal Hospital — Discussion Ongoing" class="w-full bg-slate-950 border border-slate-800 rounded p-2 text-xs font-mono text-slate-200 focus:outline-none focus:border-emerald-500"></textarea>
           </div>
 
-          <button onclick="saveActivity(true)" class="w-full py-2 bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-200 rounded-lg transition flex items-center justify-center space-x-1.5 border border-slate-700">
+          <button onclick="saveActivity(true)" class="w-full py-1.5 bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-200 rounded-lg transition flex items-center justify-center space-x-1.5 border border-slate-700">
             <i class="fa-solid fa-floppy-disk"></i>
-            <span>Save &amp; Refresh Report Preview</span>
+            <span>Save &amp; Update Briefing</span>
           </button>
         </div>
 
-        <!-- WhatsApp Report Preview -->
+        <!-- WhatsApp Daily Briefing Preview -->
         <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-4 space-y-3">
           <div class="flex items-center justify-between">
             <h3 class="text-sm font-bold text-white flex items-center space-x-2">
               <i class="fa-brands fa-whatsapp text-emerald-400"></i>
-              <span>Daily Report Preview</span>
+              <span>Daily Briefing Preview</span>
             </h3>
             <button onclick="copyReport()" class="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 active:scale-95 transition text-xs text-slate-200 rounded flex items-center space-x-1">
               <i class="fa-regular fa-copy"></i>
-              <span id="btn-copy-text">Copy Text</span>
+              <span id="btn-copy-text">Copy</span>
             </button>
           </div>
 
           <div class="relative">
-            <textarea id="report-text" readonly class="w-full h-80 bg-slate-950/90 border border-slate-800/80 rounded-lg p-3 text-xs font-mono text-slate-300 resize-none focus:outline-none"></textarea>
+            <textarea id="report-text" readonly class="w-full h-80 bg-slate-950 border border-slate-800 rounded-lg p-3 text-xs font-mono text-slate-300 resize-none focus:outline-none leading-relaxed"></textarea>
           </div>
 
           <button onclick="sendReportNow()" id="btn-send-wa" class="w-full py-2 bg-emerald-600 hover:bg-emerald-500 active:scale-95 transition text-white text-xs font-bold rounded-lg shadow-md flex items-center justify-center space-x-2">
             <i class="fa-brands fa-whatsapp text-sm"></i>
-            <span>Send to WhatsApp Now</span>
+            <span>Send Briefing to Ismail on WhatsApp</span>
           </button>
         </div>
 
@@ -222,11 +200,14 @@
 
   </main>
 
-  <footer class="border-t border-slate-800/80 bg-slate-900/40 text-center py-4 text-xs text-slate-500">
-    Tamimah Telecom &amp; Computer Technology (TTCT) • Muscat, Oman • Autonomous Prospecting System
+  <footer class="border-t border-slate-800/80 bg-slate-900/40 text-center py-3 text-xs text-slate-500">
+    Autonomous LeadGen Prospecting Agent • Muscat, Oman
   </footer>
 
   <script>
+    let allReports = [];
+    let selectedReportId = null;
+
     async function checkWhatsAppStatus() {
       try {
         const res = await fetch('/api/whatsapp-status');
@@ -237,7 +218,7 @@
 
         if (data.status === 'connected') {
           badge.className = "px-3 py-1.5 rounded-full text-xs font-medium flex items-center space-x-2 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400";
-          badgeText.innerHTML = `<i class="fa-solid fa-check"></i> <span>WhatsApp Connected: ${data.user || 'Active'}</span>`;
+          badgeText.innerHTML = `<i class="fa-solid fa-check"></i> <span>WhatsApp Connected</span>`;
           qrContainer.classList.add('hidden');
         } else {
           badge.className = "px-3 py-1.5 rounded-full text-xs font-medium flex items-center space-x-2 bg-amber-500/10 border border-amber-500/30 text-amber-400";
@@ -253,114 +234,131 @@
       try {
         const res = await fetch('/api/dashboard');
         const data = await res.json();
+        allReports = data.reports || [];
 
-        // Pool stats
-        if (data.pool_stats) {
-          document.getElementById('pool-queued-count').innerText = data.pool_stats.queued;
-          document.getElementById('pool-total-count').innerText = data.pool_stats.total;
-          document.getElementById('pool-sent-count').innerText = data.pool_stats.reported;
-          document.getElementById('pool-days-badge').innerText = `${data.pool_stats.days_buffer} Days Buffer`;
-        }
-
-        // Targets
-        const list = document.getElementById('targets-list');
-        const prospects = data.latest_report?.prospects || [];
-        document.getElementById('stat-prospects-count').innerText = `${prospects.length} Targets in Muscat`;
-
-        if (prospects.length === 0) {
-          list.innerHTML = `<div class="p-8 text-center bg-slate-900/40 border border-slate-800 rounded-xl text-slate-400 text-sm">
-            No targets generated yet. Click <b>"Wake Up & Run Agent Now"</b> to start.
-          </div>`;
+        // Populate Day-Wise Dropdown
+        const select = document.getElementById('date-select');
+        if (allReports.length === 0) {
+          select.innerHTML = `<option value="">No daily runs found</option>`;
         } else {
-          list.innerHTML = prospects.map((p, idx) => `
-            <div class="bg-slate-900/80 border border-slate-800 hover:border-slate-700 transition rounded-xl p-5 space-y-3">
-              <div class="flex items-start justify-between">
-                <div>
-                  <div class="flex items-center space-x-2">
-                    <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold flex items-center justify-center">${idx + 1}</span>
-                    <h3 class="text-base font-bold text-white">${p.title}</h3>
-                  </div>
-                  <span class="inline-block mt-1 px-2.5 py-0.5 rounded text-[11px] font-medium bg-slate-800 text-slate-300">
-                    ${p.category}
-                  </span>
-                </div>
-                <div class="text-right">
-                  <span class="px-2.5 py-1 rounded text-xs font-bold ${p.score >= 80 ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/30' : 'bg-blue-500/10 text-blue-400 border border-blue-500/30'}">
-                    ${p.score}/100 Priority
-                  </span>
-                </div>
-              </div>
+          select.innerHTML = allReports.map((r, idx) => {
+            const label = idx === 0 ? `Today (${r.date}) — ${r.prospects?.length || 0} Leads [Latest]` : `${r.date} (${r.timestamp ? r.timestamp.split(' ')[1] : ''}) — ${r.prospects?.length || 0} Leads`;
+            return `<option value="${r.id}" ${idx === 0 ? 'selected' : ''}>${label}</option>`;
+          }).join('');
 
-              <!-- Contact & Location Grid -->
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs text-slate-300">
-                <div class="flex items-center space-x-2">
-                  <i class="fa-solid fa-location-dot text-slate-500 w-4"></i>
-                  <span class="truncate">${p.address}</span>
-                </div>
-                <div class="flex items-center space-x-2">
-                  <i class="fa-solid fa-phone text-slate-500 w-4"></i>
-                  <a href="tel:${p.phone}" class="text-emerald-400 font-semibold hover:underline">${p.phone}</a>
-                </div>
-                <div class="flex items-center space-x-2">
-                  <i class="fa-solid fa-globe text-slate-500 w-4"></i>
-                  <a href="${p.website}" target="_blank" class="text-blue-400 hover:underline truncate">${p.website}</a>
-                </div>
-                <div class="flex items-center space-x-2">
-                  <i class="fa-solid fa-map-location-dot text-slate-500 w-4"></i>
-                  <a href="${p.google_maps_url}" target="_blank" class="text-slate-400 hover:text-white underline">Open in Google Maps</a>
-                </div>
-              </div>
-
-              <!-- Decision-Maker & Scraped Contact Intelligence -->
-              <div class="p-2.5 bg-blue-950/40 border border-blue-900/50 rounded-lg text-xs space-y-1">
-                <div class="font-semibold text-blue-400 flex items-center space-x-1">
-                  <i class="fa-solid fa-user-tie"></i>
-                  <span>Target Decision-Maker / Contact:</span>
-                </div>
-                <div class="text-slate-200">
-                  <b>Identified:</b> ${p.decision_makers && p.decision_makers.length > 0 ? p.decision_makers.join(', ') : p.target_persona}
-                </div>
-                ${p.emails && p.emails.length > 0 ? `
-                  <div class="text-slate-300"><b>Direct Email:</b> <a href="mailto:${p.emails[0]}" class="text-blue-400 hover:underline">${p.emails.slice(0, 2).join(', ')}</a></div>
-                ` : ''}
-              </div>
-
-              <!-- Services to Explore in Walk-in -->
-              <div class="p-3 bg-emerald-950/20 rounded-lg border border-emerald-900/40 space-y-1.5">
-                <div class="text-xs font-semibold text-emerald-400 flex items-center justify-between">
-                  <span class="flex items-center space-x-1.5">
-                    <i class="fa-solid fa-lightbulb"></i>
-                    <span>Services to Explore:</span>
-                  </span>
-                  <button type="button" onclick="quickAddCall('${p.title.replace(/'/g, "\\'")}')" class="px-2 py-0.5 bg-emerald-600/30 hover:bg-emerald-600/50 text-emerald-300 rounded text-[11px] font-medium transition flex items-center space-x-1">
-                    <i class="fa-solid fa-phone"></i>
-                    <span>+ Log Call</span>
-                  </button>
-                </div>
-                <div class="text-xs text-slate-200 font-semibold leading-relaxed">
-                  ${getServicesText(p)}
-                </div>
-                <div class="text-[11px] text-slate-400 leading-relaxed">
-                  ${p.why_it_fits || ''}
-                </div>
-              </div>
-            </div>
-          `).join('');
+          if (!selectedReportId || !allReports.find(r => r.id === selectedReportId)) {
+            selectedReportId = allReports[0].id;
+          }
+          renderSelectedReport(selectedReportId);
         }
 
-        // Report preview
-        if (data.latest_report?.text) {
-          document.getElementById('report-text').value = data.latest_report.text;
-        }
-
-        // Activity fields
+        // Activity inputs
         if (data.activity) {
-          if (data.activity.calls_made && data.activity.calls_made !== "Not supplied") document.getElementById('act-calls').value = data.activity.calls_made;
-          if (data.activity.follow_ups && data.activity.follow_ups !== "Not supplied") document.getElementById('act-followups').value = data.activity.follow_ups;
+          if (data.activity.calls_made && data.activity.calls_made !== "Not supplied") {
+            document.getElementById('act-calls').value = data.activity.calls_made;
+          }
+          if (data.activity.follow_ups && data.activity.follow_ups !== "Not supplied") {
+            document.getElementById('act-followups').value = data.activity.follow_ups;
+          }
         }
 
       } catch (err) {
         console.error("Error loading dashboard data:", err);
+      }
+    }
+
+    function onSelectDay(reportId) {
+      selectedReportId = reportId;
+      renderSelectedReport(reportId);
+    }
+
+    function renderSelectedReport(reportId) {
+      const report = allReports.find(r => r.id === reportId) || allReports[0];
+      if (!report) return;
+
+      const prospects = report.prospects || [];
+      document.getElementById('badge-leads-count').innerText = `${prospects.length} Leads`;
+      document.getElementById('leads-title').innerText = `Leads for ${report.date}`;
+      document.getElementById('leads-subtitle').innerText = `${prospects.length} Verified Targets in Muscat`;
+
+      // Status pill
+      const statusPill = document.getElementById('badge-sent-status');
+      if (report.sent_status && report.sent_status.includes('delivered')) {
+        statusPill.className = "px-2.5 py-1 rounded-full font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/30";
+        statusPill.innerHTML = `<i class="fa-solid fa-check-double mr-1"></i> Sent to Ismail (+968 9639 6357)`;
+      } else {
+        statusPill.className = "px-2.5 py-1 rounded-full font-medium bg-slate-800 text-slate-300 border border-slate-700";
+        statusPill.innerText = `Status: ${report.sent_status || 'Pending'}`;
+      }
+
+      // Briefing preview
+      document.getElementById('report-text').value = report.text || "";
+
+      // Render lead cards
+      const list = document.getElementById('targets-list');
+      if (prospects.length === 0) {
+        list.innerHTML = `<div class="p-8 text-center bg-slate-900/40 border border-slate-800 rounded-xl text-slate-400 text-xs">
+          No leads recorded for this date.
+        </div>`;
+      } else {
+        list.innerHTML = prospects.map((p, idx) => `
+          <div class="bg-slate-900/80 border border-slate-800 hover:border-slate-700 transition rounded-xl p-4 space-y-3">
+            <div class="flex items-start justify-between gap-2">
+              <div>
+                <div class="flex items-center space-x-2">
+                  <span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold flex items-center justify-center">${idx + 1}</span>
+                  <h3 class="text-sm font-bold text-white">${p.title}</h3>
+                </div>
+                <span class="inline-block mt-1 px-2 py-0.5 rounded text-[10px] font-medium bg-slate-800 text-slate-300">
+                  ${p.category || 'Commercial Enterprise'}
+                </span>
+              </div>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 whitespace-nowrap">
+                Verified
+              </span>
+            </div>
+
+            <!-- Contact Row -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs text-slate-300">
+              <div class="flex items-center space-x-1.5 truncate">
+                <i class="fa-solid fa-phone text-slate-500 text-[11px] w-3"></i>
+                <a href="tel:${p.phone}" class="text-emerald-400 font-medium hover:underline truncate">${p.phone || 'N/A'}</a>
+              </div>
+              <div class="flex items-center space-x-1.5 truncate">
+                <i class="fa-solid fa-globe text-slate-500 text-[11px] w-3"></i>
+                <a href="${p.website}" target="_blank" class="text-blue-400 hover:underline truncate">${p.website ? p.website.replace(/^https?:\/\//, '') : 'Website'}</a>
+              </div>
+              <div class="flex items-center space-x-1.5 truncate">
+                <i class="fa-solid fa-map-location-dot text-slate-500 text-[11px] w-3"></i>
+                <a href="${p.google_maps_url}" target="_blank" class="text-slate-300 hover:text-white underline truncate">Google Maps</a>
+              </div>
+            </div>
+
+            <!-- Services to Explore -->
+            <div class="p-2.5 bg-emerald-950/20 rounded-lg border border-emerald-900/40 space-y-1">
+              <div class="text-[11px] font-semibold text-emerald-400 flex items-center justify-between">
+                <span class="flex items-center space-x-1">
+                  <i class="fa-solid fa-lightbulb"></i>
+                  <span>Services to Explore:</span>
+                </span>
+                <button type="button" onclick="quickAddCall('${p.title.replace(/'/g, "\\'")}')" class="px-2 py-0.5 bg-emerald-600/30 hover:bg-emerald-600/50 text-emerald-300 rounded text-[10px] font-medium transition flex items-center space-x-1">
+                  <i class="fa-solid fa-phone"></i>
+                  <span>+ Log Call</span>
+                </button>
+              </div>
+              <div class="text-xs text-slate-200 font-medium leading-relaxed">
+                ${getServicesText(p)}
+              </div>
+            </div>
+
+            ${p.decision_makers && p.decision_makers.length > 0 ? `
+              <div class="text-[11px] text-slate-400">
+                <span class="text-slate-500">Contact Lead:</span> <span class="text-slate-200">${p.decision_makers.join(', ')}</span>
+                ${p.emails && p.emails.length > 0 ? ` • <a href="mailto:${p.emails[0]}" class="text-blue-400 hover:underline">${p.emails[0]}</a>` : ''}
+              </div>
+            ` : ''}
+          </div>
+        `).join('');
       }
     }
 
@@ -408,23 +406,6 @@
       saveActivity(false);
     }
 
-    async function refillPoolNow() {
-      const btn = document.getElementById('btn-refill');
-      btn.disabled = true;
-      btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> <span>Harvesting Prospects...</span>`;
-      try {
-        const res = await fetch('/api/refill-pool', { method: 'POST' });
-        const d = await res.json();
-        alert(`Harvest complete! Added ${d.added} new prospects to storage reserve.`);
-        await loadDashboardData();
-      } catch (err) {
-        alert("Error refilling pool: " + err.message);
-      } finally {
-        btn.disabled = false;
-        btn.innerHTML = `<i class="fa-solid fa-cloud-arrow-down"></i> <span>Harvest & Refill Pool Ahead</span>`;
-      }
-    }
-
     async function triggerRunNow() {
       const btn = document.getElementById('btn-run');
       btn.disabled = true;
@@ -458,10 +439,10 @@
         const d = await res.json();
         if (d.updated_text) {
           document.getElementById('report-text').value = d.updated_text;
+          const currentRep = allReports.find(r => r.id === selectedReportId);
+          if (currentRep) currentRep.text = d.updated_text;
         }
-        if (showAlert) {
-          alert("Activity saved! Report preview updated.");
-        }
+        if (showAlert) alert("Activity saved! Report updated.");
       } catch (err) {
         if (showAlert) alert("Error saving activity: " + err.message);
       }
@@ -472,7 +453,7 @@
       navigator.clipboard.writeText(text);
       const btn = document.getElementById('btn-copy-text');
       btn.innerText = "Copied!";
-      setTimeout(() => btn.innerText = "Copy Text", 2000);
+      setTimeout(() => btn.innerText = "Copy", 2000);
     }
 
     async function sendReportNow() {
@@ -480,18 +461,24 @@
       btn.disabled = true;
       btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> <span>Sending via WhatsApp...</span>`;
       try {
-        const res = await fetch('/api/send-whatsapp', { method: 'POST' });
+        const text = document.getElementById('report-text').value;
+        const res = await fetch('/api/send-whatsapp', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ report_id: selectedReportId, text: text })
+        });
         const d = await res.json();
         if (d.success) {
-          alert("WhatsApp message sent successfully!");
+          alert("Briefing sent to Ismail successfully!");
+          await loadDashboardData();
         } else {
-          alert("Failed to send: " + (d.error || "Make sure WhatsApp QR is linked."));
+          alert("Failed to send: " + (d.error || "Make sure WhatsApp is linked."));
         }
       } catch (e) {
         alert("Error: " + e.message);
       } finally {
         btn.disabled = false;
-        btn.innerHTML = `<i class="fa-brands fa-whatsapp text-sm"></i> <span>Send to WhatsApp Now</span>`;
+        btn.innerHTML = `<i class="fa-brands fa-whatsapp text-sm"></i> <span>Send Briefing to Ismail on WhatsApp</span>`;
       }
     }
 
