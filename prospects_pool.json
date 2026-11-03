@@ -110,8 +110,8 @@
     "score": 100,
     "score_reasons": "Verified physical location in Oman, Direct phone and official website verified, Established commercial category (Logistics service), Mapped to active Tamimah solution pillar, Substantial operational scale (34+ public customer reviews), Clear observable operational workflow matching software automation",
     "discovered_at": "2026-11-03 04:41:55",
-    "status": "reported",
-    "reported_date": "03 November 2026"
+    "status": "queued",
+    "reported_date": null
   },
   {
     "cid": "5952879004998685158",
@@ -129,8 +129,8 @@
     "score": 100,
     "score_reasons": "Verified physical location in Oman, Direct phone and official website verified, Established commercial category (Corporate office), Mapped to active Tamimah solution pillar, Substantial operational scale (67+ public customer reviews), Clear observable operational workflow matching software automation",
     "discovered_at": "2026-11-03 04:41:55",
-    "status": "reported",
-    "reported_date": "03 November 2026"
+    "status": "queued",
+    "reported_date": null
   },
   {
     "cid": "14648634159816197348",
@@ -148,8 +148,8 @@
     "score": 100,
     "score_reasons": "Verified physical location in Oman, Direct phone and official website verified, Established commercial category (Freight forwarding service), Mapped to active Tamimah solution pillar, Substantial operational scale (24+ public customer reviews), Clear observable operational workflow matching software automation",
     "discovered_at": "2026-11-03 04:41:55",
-    "status": "reported",
-    "reported_date": "03 November 2026"
+    "status": "queued",
+    "reported_date": null
   },
   {
     "cid": "8573146568521236867",
@@ -167,8 +167,8 @@
     "score": 100,
     "score_reasons": "Verified physical location in Oman, Direct phone and official website verified, Established commercial category (Shipping service), Mapped to active Tamimah solution pillar, Substantial operational scale (28+ public customer reviews), Clear observable operational workflow matching software automation",
     "discovered_at": "2026-11-03 04:41:55",
-    "status": "reported",
-    "reported_date": "03 November 2026"
+    "status": "queued",
+    "reported_date": null
   },
   {
     "cid": "7710240827754359344",
@@ -186,8 +186,8 @@
     "score": 100,
     "score_reasons": "Verified physical location in Oman, Direct phone and official website verified, Established commercial category (Hospital), Mapped to active Tamimah solution pillar, Substantial operational scale (4100+ public customer reviews), Clear observable operational workflow matching software automation",
     "discovered_at": "2026-11-03 04:41:57",
-    "status": "reported",
-    "reported_date": "03 November 2026"
+    "status": "queued",
+    "reported_date": null
   },
   {
     "cid": "6215722420748453728",
@@ -212,8 +212,8 @@
     "score": 100,
     "score_reasons": "Verified physical location in Oman, Direct phone and official website verified, Established commercial category (Moving service), Mapped to active Tamimah solution pillar, Substantial operational scale (33+ public customer reviews), Clear observable operational workflow matching software automation",
     "discovered_at": "2026-11-03 04:43:27",
-    "status": "reported",
-    "reported_date": "03 November 2026"
+    "status": "queued",
+    "reported_date": null
   },
   {
     "cid": "13669612599603492256",
@@ -240,8 +240,8 @@
     "score": 100,
     "score_reasons": "Verified physical location in Oman, Direct phone and official website verified, Established commercial category (Logistics service), Mapped to active Tamimah solution pillar, Substantial operational scale (34+ public customer reviews), Clear observable operational workflow matching software automation",
     "discovered_at": "2026-11-03 04:43:28",
-    "status": "reported",
-    "reported_date": "03 November 2026"
+    "status": "queued",
+    "reported_date": null
   },
   {
     "cid": "3276751208006121218",
@@ -266,8 +266,8 @@
     "score": 100,
     "score_reasons": "Verified physical location in Oman, Direct phone and official website verified, Established commercial category (Hospital), Mapped to active Tamimah solution pillar, Substantial operational scale (2200+ public customer reviews), Clear observable operational workflow matching software automation",
     "discovered_at": "2026-11-03 04:43:33",
-    "status": "reported",
-    "reported_date": "03 November 2026"
+    "status": "queued",
+    "reported_date": null
   },
   {
     "cid": "4899044500321408212",
@@ -292,8 +292,8 @@
     "score": 100,
     "score_reasons": "Verified physical location in Oman, Direct phone and official website verified, Established commercial category (Private hospital), Mapped to active Tamimah solution pillar, Substantial operational scale (2300+ public customer reviews), Clear observable operational workflow matching software automation",
     "discovered_at": "2026-11-03 04:43:37",
-    "status": "reported",
-    "reported_date": "03 November 2026"
+    "status": "queued",
+    "reported_date": null
   },
   {
     "cid": "717534442369633373",
@@ -323,8 +323,8 @@
     "score": 100,
     "score_reasons": "Verified physical location in Oman, Direct phone and official website verified, Established commercial category (Hospital), Mapped to active Tamimah solution pillar, Substantial operational scale (1000+ public customer reviews), Clear observable operational workflow matching software automation",
     "discovered_at": "2026-11-03 04:43:45",
-    "status": "reported",
-    "reported_date": "03 November 2026"
+    "status": "queued",
+    "reported_date": null
   },
   {
     "cid": "12790695790415361477",
@@ -349,8 +349,8 @@
     "why_it_fits": "High inbound patient traffic requires automated WhatsApp appointment confirmations, bilingual Arabic/English IVR triage, and integrated telehealth workflows.",
     "score": 100,
     "discovered_at": "2026-11-03 04:47:26",
-    "status": "reported",
-    "reported_date": "03 November 2026"
+    "status": "queued",
+    "reported_date": null
   },
   {
     "cid": "14861402158133097089",
@@ -370,8 +370,8 @@
     "why_it_fits": "High inbound patient traffic requires automated WhatsApp appointment confirmations, bilingual Arabic/English IVR triage, and integrated telehealth workflows.",
     "score": 100,
     "discovered_at": "2026-11-03 04:46:59",
-    "status": "reported",
-    "reported_date": "03 November 2026"
+    "status": "queued",
+    "reported_date": null
   },
   {
     "cid": "4328788204010184471",
@@ -393,8 +393,8 @@
     "why_it_fits": "High inbound patient traffic requires automated WhatsApp appointment confirmations, bilingual Arabic/English IVR triage, and integrated telehealth workflows.",
     "score": 100,
     "discovered_at": "2026-11-03 04:47:08",
-    "status": "reported",
-    "reported_date": "03 November 2026"
+    "status": "queued",
+    "reported_date": null
   },
   {
     "cid": "5304742498012347536",
@@ -418,8 +418,8 @@
     "why_it_fits": "High inbound patient traffic requires automated WhatsApp appointment confirmations, bilingual Arabic/English IVR triage, and integrated telehealth workflows.",
     "score": 100,
     "discovered_at": "2026-11-03 04:46:45",
-    "status": "reported",
-    "reported_date": "03 November 2026"
+    "status": "queued",
+    "reported_date": null
   },
   {
     "cid": "10755293223372814139",
@@ -441,8 +441,8 @@
     "why_it_fits": "High inbound patient traffic requires automated WhatsApp appointment confirmations, bilingual Arabic/English IVR triage, and integrated telehealth workflows.",
     "score": 100,
     "discovered_at": "2026-11-03 04:46:51",
-    "status": "reported",
-    "reported_date": "03 November 2026"
+    "status": "queued",
+    "reported_date": null
   },
   {
     "cid": "14943581058604832152",
@@ -464,8 +464,8 @@
     "why_it_fits": "High inbound patient traffic requires automated WhatsApp appointment confirmations, bilingual Arabic/English IVR triage, and integrated telehealth workflows.",
     "score": 100,
     "discovered_at": "2026-11-03 04:51:28",
-    "status": "reported",
-    "reported_date": "03 November 2026"
+    "status": "queued",
+    "reported_date": null
   },
   {
     "cid": "11291892764229377048",
@@ -485,8 +485,8 @@
     "why_it_fits": "Scales multi-branch business operations with unified ERP, customer messaging, and field operations.",
     "score": 100,
     "discovered_at": "2026-11-03 04:51:51",
-    "status": "reported",
-    "reported_date": "03 November 2026"
+    "status": "queued",
+    "reported_date": null
   },
   {
     "cid": "18121469001261902145",
@@ -508,8 +508,8 @@
     "why_it_fits": "High inbound patient traffic requires automated WhatsApp appointment confirmations, bilingual Arabic/English IVR triage, and integrated telehealth workflows.",
     "score": 100,
     "discovered_at": "2026-11-03 04:51:29",
-    "status": "reported",
-    "reported_date": "03 November 2026"
+    "status": "queued",
+    "reported_date": null
   },
   {
     "cid": "17300966651573623977",
@@ -532,8 +532,8 @@
     "why_it_fits": "Provides unified property lease tracking, tenant billing reconciliation, automated payment gateway integration, and tenant maintenance ticketing.",
     "score": 100,
     "discovered_at": "2026-11-03 04:52:20",
-    "status": "reported",
-    "reported_date": "03 November 2026"
+    "status": "queued",
+    "reported_date": null
   },
   {
     "cid": "10577541091709896495",
@@ -553,8 +553,8 @@
     "why_it_fits": "Provides unified property lease tracking, tenant billing reconciliation, automated payment gateway integration, and tenant maintenance ticketing.",
     "score": 100,
     "discovered_at": "2026-11-03 04:52:10",
-    "status": "reported",
-    "reported_date": "03 November 2026"
+    "status": "queued",
+    "reported_date": null
   },
   {
     "cid": "6732997057314264193",
@@ -574,8 +574,8 @@
     "why_it_fits": "High inbound patient traffic requires automated WhatsApp appointment confirmations, bilingual Arabic/English IVR triage, and integrated telehealth workflows.",
     "score": 100,
     "discovered_at": "2026-11-03 04:57:12",
-    "status": "reported",
-    "reported_date": "03 November 2026"
+    "status": "queued",
+    "reported_date": null
   },
   {
     "cid": "10378763810981673007",
@@ -595,8 +595,8 @@
     "why_it_fits": "Enables GPS and operating-hour telemetry on heavy machinery across job sites, preventing unauthorized equipment usage and dispatching field maintenance.",
     "score": 100,
     "discovered_at": "2026-11-03 04:57:20",
-    "status": "reported",
-    "reported_date": "03 November 2026"
+    "status": "queued",
+    "reported_date": null
   },
   {
     "cid": "12447758857143005090",
@@ -616,8 +616,8 @@
     "why_it_fits": "Provides unified property lease tracking, tenant billing reconciliation, automated payment gateway integration, and tenant maintenance ticketing.",
     "score": 100,
     "discovered_at": "2026-11-03 04:57:43",
-    "status": "reported",
-    "reported_date": "03 November 2026"
+    "status": "queued",
+    "reported_date": null
   },
   {
     "cid": "7532560072454648030",
@@ -640,8 +640,8 @@
     "why_it_fits": "Enables GPS and operating-hour telemetry on heavy machinery across job sites, preventing unauthorized equipment usage and dispatching field maintenance.",
     "score": 100,
     "discovered_at": "2026-11-03 04:57:27",
-    "status": "reported",
-    "reported_date": "03 November 2026"
+    "status": "queued",
+    "reported_date": null
   },
   {
     "cid": "9753673851948944091",
@@ -666,8 +666,8 @@
     "why_it_fits": "Enables GPS and operating-hour telemetry on heavy machinery across job sites, preventing unauthorized equipment usage and dispatching field maintenance.",
     "score": 100,
     "discovered_at": "2026-11-03 04:57:24",
-    "status": "reported",
-    "reported_date": "03 November 2026"
+    "status": "queued",
+    "reported_date": null
   },
   {
     "cid": "16091815744790573456",

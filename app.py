@@ -90,6 +90,10 @@ async def get_dashboard():
                 day_map[d]["prospects"].append(p)
                 seen.add(p.get("title"))
 
+    # Strictly enforce 5 leads per day limit (extra leads facilitate upcoming dates)
+    for d, rec in day_map.items():
+        rec["prospects"] = rec["prospects"][:5]
+
     day_records = list(day_map.values())
     latest_report = day_records[0] if day_records else None
     activity = tamimah_agent.load_daily_activity()
