@@ -1,5 +1,151 @@
 [
   {
+    "id": "20261105_132528",
+    "date": "05 November 2026",
+    "text": "📊 *DAILY BUSINESS DEVELOPMENT REPORT*\n📅 *Date:* 05 November 2026\n📍 *Region:* Muscat, Oman\n\n1️⃣ *CALLS*\n• United Cargo & Logistics - Meeting Booked\n• AGS Logistics - Follow-up Required\n• Al Nowras Logistics - Follow-up Required\n\n2️⃣ *WALK-INS*\n\n1. *Allied Logistics LLC*\n• Services to explore: GPS Fleet Telematics & Route Compliance, Fuel Monitoring & Dispatch Automation\n\n2. *DJL Logistics*\n• Services to explore: GPS Fleet Telematics & Route Compliance, Fuel Monitoring & Dispatch Automation\n\n3. *Badr Al Samaa Medical Centre Al Khuwair مستوصف بدر السماء - الخوير*\n• Services to explore: Arabic Voice AI, WhatsApp Patient Appointments & Omnichannel Contact Center\n\n4. *Numa health Specialty Hospital, Ghoubra*\n• Services to explore: Arabic Voice AI, WhatsApp Patient Appointments & Omnichannel Contact Center\n\n5. *AL HAYAT INTERNATIONAL HOSPITAL*\n• Services to explore: Arabic Voice AI, WhatsApp Patient Appointments & Omnichannel Contact Center\n\n3️⃣ *FOLLOW-UPS*\n• BHT - BIN HARIZ TRADING & CONT . CO — Follow-up Required\n• Muscat international Shipping & Logisitcs LLC — Follow-up Required\n• KIMSHEALTH Hospital Oman — Follow-up Required\n\n_(this report was generated using ai agent and sent directly by it)_",
+    "prospects": [
+      {
+        "cid": "6215722420748453728",
+        "title": "Allied Logistics LLC",
+        "category": "Moving service",
+        "address": "Warehouse #4, Way 5019, Ghala Industrial Muscat OM, 100",
+        "phone": "22 071177",
+        "website": "http://www.alliedlogistics.co.om/",
+        "emails": [
+          "enquiries@alliedlogistics.co.om"
+        ],
+        "key_contacts": [
+          "Enquiries"
+        ],
+        "extra_phones": [],
+        "rating": 3.9,
+        "reviews_count": 33,
+        "google_maps_url": "https://maps.google.com/?q=23.57176,58.372044",
+        "tamimah_pillar": "Smart Cities & Connected Infrastructure / Industry Solutions",
+        "tamimah_offering": "MeshTrac & AynX 360 (Fleet Telematics & Asset Tracking)",
+        "why_it_fits": "Requires real-time fleet visibility, GPS route audit, and warehouse tracking across Oman governorates.",
+        "score": 100,
+        "score_reasons": "Verified physical location in Oman, Direct phone and official website verified, Established commercial category (Moving service), Mapped to active Tamimah solution pillar, Substantial operational scale (33+ public customer reviews), Clear observable operational workflow matching software automation",
+        "discovered_at": "2026-11-03 04:43:27",
+        "status": "reported",
+        "reported_date": "05 November 2026"
+      },
+      {
+        "cid": "13669612599603492256",
+        "title": "DJL Logistics",
+        "category": "Logistics service",
+        "address": "Plot 228, Ghala, Way, 319 Block 250, Muscat",
+        "phone": "9387 5361",
+        "website": "https://djl-logistics.com/",
+        "emails": [
+          "leilar@djl-logistics.com"
+        ],
+        "key_contacts": [
+          "Leilar"
+        ],
+        "extra_phones": [
+          "+96893875361"
+        ],
+        "rating": 5,
+        "reviews_count": 34,
+        "google_maps_url": "https://maps.google.com/?q=23.58344,58.369534",
+        "tamimah_pillar": "Smart Cities & Connected Infrastructure / Industry Solutions",
+        "tamimah_offering": "MeshTrac & AynX 360 (Fleet Telematics & Asset Tracking)",
+        "why_it_fits": "Requires real-time fleet visibility, GPS route audit, and warehouse tracking across Oman governorates.",
+        "score": 100,
+        "score_reasons": "Verified physical location in Oman, Direct phone and official website verified, Established commercial category (Logistics service), Mapped to active Tamimah solution pillar, Substantial operational scale (34+ public customer reviews), Clear observable operational workflow matching software automation",
+        "discovered_at": "2026-11-03 04:43:28",
+        "status": "reported",
+        "reported_date": "05 November 2026"
+      },
+      {
+        "cid": "3276751208006121218",
+        "title": "Badr Al Samaa Medical Centre Al Khuwair مستوصف بدر السماء - الخوير",
+        "category": "Hospital",
+        "address": "HCMH V66, Al Khuwair St, Muscat‭",
+        "phone": "24 488322",
+        "website": "https://al-khuwair.badralsamaahospitals.com/",
+        "emails": [],
+        "key_contacts": [],
+        "extra_phones": [
+          "+968 99676589, 24488322",
+          "+96899676589",
+          "+96824488322"
+        ],
+        "rating": 4.3,
+        "reviews_count": 2200,
+        "google_maps_url": "https://maps.google.com/?q=23.586597,58.427097",
+        "tamimah_pillar": "Customer Experience & Engagement / AI Automation",
+        "tamimah_offering": "Raddak (Arabic Voice AI) & TawasulCX",
+        "why_it_fits": "Handles 24/7 inbound patient booking, automated triage, and bilingual Arabic/English customer service.",
+        "score": 100,
+        "score_reasons": "Verified physical location in Oman, Direct phone and official website verified, Established commercial category (Hospital), Mapped to active Tamimah solution pillar, Substantial operational scale (2200+ public customer reviews), Clear observable operational workflow matching software automation",
+        "discovered_at": "2026-11-03 04:43:33",
+        "status": "reported",
+        "reported_date": "05 November 2026"
+      },
+      {
+        "cid": "4899044500321408212",
+        "title": "Numa health Specialty Hospital, Ghoubra",
+        "category": "Private hospital",
+        "address": "133 Al Ghubrah St, Muscat 133",
+        "phone": "24 504000",
+        "website": "https://numahealth.om/",
+        "emails": [
+          "info@numahealth.om"
+        ],
+        "key_contacts": [],
+        "extra_phones": [
+          "80000800"
+        ],
+        "rating": 4.2,
+        "reviews_count": 2300,
+        "google_maps_url": "https://maps.google.com/?q=23.586317,58.410103",
+        "tamimah_pillar": "Customer Experience & Engagement / AI Automation",
+        "tamimah_offering": "Raddak (Arabic Voice AI) & TawasulCX",
+        "why_it_fits": "Handles 24/7 inbound patient booking, automated triage, and bilingual Arabic/English customer service.",
+        "score": 100,
+        "score_reasons": "Verified physical location in Oman, Direct phone and official website verified, Established commercial category (Private hospital), Mapped to active Tamimah solution pillar, Substantial operational scale (2300+ public customer reviews), Clear observable operational workflow matching software automation",
+        "discovered_at": "2026-11-03 04:43:37",
+        "status": "reported",
+        "reported_date": "05 November 2026"
+      },
+      {
+        "cid": "717534442369633373",
+        "title": "AL HAYAT INTERNATIONAL HOSPITAL",
+        "category": "Hospital",
+        "address": "Ali Shaihani Complex، Al Ghubra Roundabout, Muscat 131",
+        "phone": "22 004000",
+        "website": "http://www.alhayathospital.com/",
+        "emails": [
+          "patientcarecoordinator@alhayatclinic.com"
+        ],
+        "key_contacts": [
+          "Patientcarecoordinator"
+        ],
+        "extra_phones": [
+          "+96897971672",
+          "+96879191834",
+          "+96822004000",
+          "+96822004001"
+        ],
+        "rating": 4.4,
+        "reviews_count": 1000,
+        "google_maps_url": "https://maps.google.com/?q=23.589825,58.40734",
+        "tamimah_pillar": "Customer Experience & Engagement / AI Automation",
+        "tamimah_offering": "Raddak (Arabic Voice AI) & TawasulCX",
+        "why_it_fits": "Handles 24/7 inbound patient booking, automated triage, and bilingual Arabic/English customer service.",
+        "score": 100,
+        "score_reasons": "Verified physical location in Oman, Direct phone and official website verified, Established commercial category (Hospital), Mapped to active Tamimah solution pillar, Substantial operational scale (1000+ public customer reviews), Clear observable operational workflow matching software automation",
+        "discovered_at": "2026-11-03 04:43:45",
+        "status": "reported",
+        "reported_date": "05 November 2026"
+      }
+    ],
+    "sent_status": "delivered",
+    "timestamp": "2026-11-05 13:25:28"
+  },
+  {
     "id": "20261104_115215",
     "date": "04 November 2026",
     "text": "📊 *DAILY BUSINESS DEVELOPMENT REPORT*\n📅 *Date:* 04 November 2026\n📍 *Region:* Muscat, Oman\n\n1️⃣ *CALLS*\n• United Cargo & Logistics - Meeting Booked\n• AGS Logistics - Follow-up Required\n• Al Nowras Logistics - Follow-up Required\n\n2️⃣ *WALK-INS*\n\n1. *Tristar Freight and Logistics LLC. Oman ترايستار للشحن و الخدمات اللوجستية*\n• Services to explore: GPS Fleet Telematics & Route Compliance, Fuel Monitoring & Dispatch Automation\n\n2. *Bahwan Logistics LLC بهوان اللوجستية*\n• Services to explore: GPS Fleet Telematics & Route Compliance, Fuel Monitoring & Dispatch Automation\n\n3. *BHT - BIN HARIZ TRADING & CONT . CO*\n• Services to explore: GPS Fleet Telematics & Route Compliance, Fuel Monitoring & Dispatch Automation\n\n4. *Muscat international Shipping & Logisitcs LLC*\n• Services to explore: GPS Fleet Telematics & Route Compliance, Fuel Monitoring & Dispatch Automation\n\n5. *KIMSHEALTH Hospital Oman*\n• Services to explore: Arabic Voice AI, WhatsApp Patient Appointments & Omnichannel Contact Center\n\n3️⃣ *FOLLOW-UPS*\n• Al Nowras Logistics Company in Oman — Follow-up Required\n• Happy Movers Logistics — Follow-up Required\n• Greenfield Logistics Services LLC — Follow-up Required\n\n_(this report was generated using ai agent and sent directly by it)_",
